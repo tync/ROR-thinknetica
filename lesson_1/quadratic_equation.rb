@@ -1,6 +1,6 @@
 print "Введите 3 коэффициента(a b с): "
 a, b, c = gets.chomp.split(" ").map { |s| s.to_i }
-puts Math.sqrt(b)
+
 d = Math.sqrt(b) - 4 * a * c
 if d > 0
 	c = Math.sqrt(d)

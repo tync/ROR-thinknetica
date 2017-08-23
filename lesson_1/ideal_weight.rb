@@ -4,6 +4,7 @@ name.capitalize!
 
 print "Какой у вас рост? "
 weight = gets.chomp.to_i
+
 ideal_weight = weight - 110
 if ideal_weight  >= 0
 	puts "#{name} ваш идеальный вес: #{ideal_weight}"
