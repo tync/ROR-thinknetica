@@ -1,7 +1,7 @@
 print "Введите 3 коэффициента(a b с): "
 a, b, c = gets.chomp.split(" ").map { |s| s.to_f }
 
-d = b^2 - 4 * a * c
+d = b**2 - 4 * a * c
 if d > 0
   c = Math.sqrt(d)
   puts "D = #{d}, x1 = #{(-b + c) / (2 * a)}, x2 = #{(-b - c) / (2 * a)}"
