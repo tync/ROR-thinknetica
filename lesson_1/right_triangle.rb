@@ -1,5 +1,5 @@
 print "Введите стороны треугольника: "
-a, b, c = gets.chomp.split(" ").map { |s| s.to_i }.sort
+a, b, c = gets.chomp.split(" ").map { |s| s.to_f }.sort
 
 if c**2 == a**2 + b**2
   if a == b
@@ -9,5 +9,7 @@ if c**2 == a**2 + b**2
   end
 elsif a == b == c
   puts "Треугольник равнобедренный и равносторонний"
+elsif a == b || b == c || a == c
+  puts "Треугольник равнобедренный"
 end
 
