@@ -13,8 +13,4 @@ months = {
   Decenber: 31
 }
 
-months.each do |month, day| 
-  if months[month] == 30
-      puts month
-  end
-end
+months.each { |month, day| puts month if day == 30 }

@@ -1,6 +1,5 @@
-vowels = Hash.new
-alphabetize = ('a'..'z').to_a
+vowels = {}
 
-"aeiouy".split("").each do |i|
-  vowels[i] = alphabetize.index(i) + 1
+('a'..'z').each_with_index do |val, index|
+  vowels[val] = index + 1 if "aeiouy".include?(val)
 end

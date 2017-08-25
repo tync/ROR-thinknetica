@@ -1,5 +1,5 @@
 print "Введите дату (dd.mm.year): "
-day, month, year = gets.chomp.split(".").map { |e| e.to_i }
+day, month, year = gets.chomp.split(".").map(&:to_i)
 
 months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 

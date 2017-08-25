@@ -1,26 +1,24 @@
-bag = Hash.new
+basket = {}
 sum_purchases = 0
 
 loop do
   print "Введите название товара: "
-  name = gets.chomp
+  product = gets.chomp
 
-  break if name == "стоп"
+  break if product == "стоп"
 
   print "Введите цену: "
   price = gets.chomp.to_f
 
   print "Введите количество: "
-  number = gets.chomp.to_f
+  quantity = gets.chomp.to_f
 
-  bag[name] = {price => number}
-  sum_purchases += price * number
+  basket[product] = { price: price, quantity: quantity }
+  sum_purchases += price * quantity
 end
 
-bag.each do |k, v|
-  v.each do |a, b|
-    puts "#{k}: #{a} * #{b} = #{a * b}"
-  end
+basket.each do |product, val|
+    puts "#{product}: #{val[:price]} * #{val[:quantity]} = #{val[:price] * val[:quantity]}"
 end
 
 puts "Итоговая сумма покупок: #{sum_purchases}"
