@@ -13,8 +13,7 @@ class Station
   end
 
   def send_train(train)
-    @trains.delete(train)
-    @train_type[train.type] -= 1 
+    @train_type[train.type] -= 1 if @trains.delete(train)
   end
 
   def trains_by_type(type)
