@@ -1,20 +1,19 @@
 class Route
-  attr_reader :route
+  attr_reader :stations
 
   def initialize(first, last)
-    @route = [first]
-    @route << last
+    @stations = [first, last]
   end
 
   def add(station)
-    @route.insert(-2, station)
-    @route.uniq
+    @stations.insert(-2, station)
+    @stations.uniq!
   end
 
   def delete(station)
-    if station != @route.first && station != @route.last
-      @route.delete(station)
+    if station != @stations.first && station != @stations.last
+      @stations.delete(station)
     end
   end
-
+  
 end
