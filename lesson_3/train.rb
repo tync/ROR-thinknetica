@@ -6,7 +6,6 @@ class Train
     @type = type
     @wagons = wagons
     @speed = 0
-    @position = 0
   end
 
   def speed_up(n)
@@ -28,22 +27,23 @@ class Train
 
   def set_route(route)
     @route = route
-    route.stations.first.take_train(self)
+    @position = 0
+    current_station.take_train(self)
   end
 
   def forward
-    if @route.stations[@position +1]
-      @route.stations[@position].send_train(self)
-      @route.stations[@position +1].take_train(self)
+    if next_station
+      current_station.send_train(self)
       @position += 1
+      current_station.take_train(self)
     end
   end
 
   def backward
     if @position != 0
-      @route.stations[@position].send_train(self)
-      @route.stations[@position -1].take_train(self)
+      current_station.send_train(self)
       @position -= 1
+      current_station].take_train(self)
     end
   end
 
