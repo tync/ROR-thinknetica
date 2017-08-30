@@ -40,7 +40,7 @@ class Train
   end
 
   def backward
-    if @position != 0
+    if back_station
       current_station.send_train(self)
       @position -= 1
       current_station].take_train(self)
