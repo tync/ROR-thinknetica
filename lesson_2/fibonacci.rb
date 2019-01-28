@@ -1,5 +1,6 @@
 fib_arr = [0, 1]
-
-while fib_arr[-1] + fib_arr[-2] < 100
-  fib_arr << fib_arr[-1] + fib_arr[-2]
+num = 1
+loop do
+  num >= 100 ? break : fib_arr << num
+  num += fib_arr[-2]
 end

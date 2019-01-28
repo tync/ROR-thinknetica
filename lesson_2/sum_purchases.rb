@@ -14,10 +14,10 @@ loop do
   quantity = gets.chomp.to_f
 
   basket[product] = { price: price, quantity: quantity }
-  sum_purchases += price * quantity
 end
 
 basket.each do |product, val|
+    sum_purchases += val[:price] * val[:quantity]
     puts "#{product}: #{val[:price]} * #{val[:quantity]} = #{val[:price] * val[:quantity]}"
 end
 
