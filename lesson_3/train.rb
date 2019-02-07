@@ -1,6 +1,6 @@
 class Train
   attr_reader :speed, :wagons, :type
-  
+
   def initialize(number, type, wagons)
     @number = number
     @type = type
@@ -9,8 +9,7 @@ class Train
   end
 
   def speed_up(n)
-    @speed += n
-    @speed == 0 if @speed < 0
+    @speed = [@speed + n, 0].max
   end
 
   def stop
@@ -43,12 +42,12 @@ class Train
     if back_station
       current_station.send_train(self)
       @position -= 1
-      current_station].take_train(self)
+      current_station.take_train(self)
     end
   end
 
   def next_station
-    @route.stations[@position +1]
+    @route.stations[@position + 1]
   end
 
   def current_station
